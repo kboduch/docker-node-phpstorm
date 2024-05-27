@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#Rebuilding the docker image copies the latest source code and bakes in the dependencies (both dev and prod).
+docker compose up --force-recreate --watch

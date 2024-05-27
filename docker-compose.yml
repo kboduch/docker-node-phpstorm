@@ -1,0 +1,23 @@
+name: my-app
+services:
+  node:
+    stop_signal: SIGTERM
+    build:
+      context: ./
+      target: dev
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    # The watch does not synchronize files initially. Thus, the rebuild-and-watch must be used always.
+    # Also for the latest node_modules in case the package* changes.
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
+        - action: rebuild
+          path: package-lock.json

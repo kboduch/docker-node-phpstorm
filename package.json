@@ -1,0 +1,14 @@
+{
+    "name": "phpstorm_nodejs_docker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+        "testo": "echo \"Error: no test specified\" && exit 1",
+        "elo": "echo \"Hello World \""
+    },
+    "private": true,
+    "devDependencies": {
+        "nodemon": "^3.1.0"
+    }
+}
